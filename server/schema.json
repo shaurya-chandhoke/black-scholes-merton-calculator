@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "title": "BSM",
+  "description": "Black Scholes Merton API Data",
+  "type": "object",
+  "additionalProperties": false,
+  "minProperties": 6,
+  "properties": {
+    "optionType": {
+      "type": "string",
+      "description": "Whether the option to price is a European call or put"
+    },
+    "stockPrice": {
+      "type": "number",
+      "description": "The price of the stock"
+    },
+    "strikePrice": {
+      "type": "number",
+      "description": "The initial price of the option"
+    },
+    "timeToMaturity": {
+      "type": "number",
+      "description": "The amount of time left before the option expires"
+    },
+    "riskFreeRate": {
+      "type": "number",
+      "description": "The risk-free interest rate"
+    },
+    "volatility": {
+      "type": "number",
+      "description": "The implied volatility of the option"
+    }
+  }
+}
