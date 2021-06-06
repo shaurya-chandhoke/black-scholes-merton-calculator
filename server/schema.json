@@ -16,7 +16,7 @@
     },
     "strikePrice": {
       "type": "number",
-      "description": "The initial price of the option"
+      "description": "The price of the stock when exercising the option"
     },
     "timeToMaturity": {
       "type": "number",

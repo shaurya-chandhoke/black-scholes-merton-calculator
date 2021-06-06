@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "52945151-ee80-41ad-92f9-f361405d570e",
+		"name": "black-scholes-merton-calculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/health",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(CALL) Sample Black Scholes Merton Calculator API Call",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"optionType\": \"call\",\r\n    \"stockPrice\": 20,\r\n    \"strikePrice\": 20,\r\n    \"timeToMaturity\": 1,\r\n    \"riskFreeRate\": 0.01,\r\n    \"volatility\": 0.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/calculator",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"calculator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(PUIT) Sample Black Scholes Merton Calculator API Call",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"optionType\": \"put\",\r\n    \"stockPrice\": 20,\r\n    \"strikePrice\": 20,\r\n    \"timeToMaturity\": 1,\r\n    \"riskFreeRate\": 0.01,\r\n    \"volatility\": 0.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/calculator",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"calculator"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

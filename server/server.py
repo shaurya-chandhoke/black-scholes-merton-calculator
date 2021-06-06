@@ -32,7 +32,26 @@ def get_health():
 @expects_json(schema)
 def process_calculator():
     query_data = g.data
-    return jsonify(query_data)
+
+    optionType = query_data['optionType']
+    stockPrice = query_data['stockPrice']
+    strikePrice = query_data['strikePrice']
+    timeToMaturity = query_data['timeToMaturity']
+    riskFreeRate = query_data['riskFreeRate']
+    volatility = query_data['volatility']
+
+    if optionType == 'call':
+        optionPrice = bsmCalculator.callPrice(S_0=stockPrice, K=strikePrice, T=timeToMaturity, r=riskFreeRate,
+                                              sigma=volatility)
+    else:
+        optionPrice = bsmCalculator.putPrice(S_0=stockPrice, K=strikePrice, T=timeToMaturity, r=riskFreeRate,
+                                             sigma=volatility)
+
+    response = {
+        "contract_type": optionType,
+        "contract_price": optionPrice
+    }
+    return jsonify(response)
 
 
 @app.errorhandler(400)
