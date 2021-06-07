@@ -86,7 +86,7 @@ Given the differential equation components, this will return the price of the ca
 
 <span style="color: orange">POST</span> Sample Black Scholes Merton Calculator API Call (European Put)
 
-Given the differential equation components, this will return the price of the call option
+Given the differential equation components, this will return the price of the put option
 ```
 /api/calculator
 ```
