@@ -6,22 +6,20 @@ calculator class written in Python 3, and return the appropriate price.
 
 ## Set Up
 
-The easiest way to set this up would be through a smart IDE such as PyCharm. However, in the event a user does not have
-that, kindly use your machine's terminal (linux/MacOS) or cmd (Windows) to perform the set up steps.
+The easiest way to set this up would be through a smart IDE such as PyCharm. However, in the event you do not have
+that, kindly use your machine's terminal (Linux/MacOS) or cmd (Windows) to perform the set up steps.
 
 ### Prerequisites
 
 - Ensure the [PIP python package manager](https://pip.pypa.io/en/stable/quickstart/) is set up as it provides the
   simplest way to install the relevant Python packages
-- It is **highly** recommended a python virtual environment is set up.
-    - To set up the virtual environment:
-        1. Install `virtualenv` using pip
-            - `pip install virtualenv`
-        2. Set up a virtual environment using `virtualenv`
-            - `virtualenv venv`
+- It is **highly** recommended a python virtual environment is set up. To do so:
+    1. Install `virtualenv` using PIP
+        - `pip install virtualenv`
+    2. Set up the virtual environment using `virtualenv`
+        - `virtualenv venv`
 
 ### Installation
-
 Assuming the above prerequisites are met, installation is as easy as:
 
 ```shell
@@ -31,17 +29,15 @@ pip install -r requirements.txt
 The above command will pass the package contents listed in the *requirements.txt* to PIP and install each one.
 
 ### Start Up
-
 Please run the **server.py** file to start the server:
-
 ```shell
 python server.py
 ```
 
 ## Other Usages
 
-Although this server is intended to be used with the web application, there's no reason why a user can't make use of the
-api available to make calls to the calculator exclusively. The following is the api and schema used to validate the api
+Although this server is intended to be used with the web application, there's no reason why you can't make use of the
+API available to make calls to the calculator exclusively. The following is the API and schema used to validate the API
 calls:
 
 <br/>
@@ -68,6 +64,13 @@ http://127.0.0.1:5000/api/calculator
     "volatility": 0.23
 }
 ```
+*Response Body*
+```json
+{
+  "contract_price": 1.923203598494748,
+  "contract_type": "call"
+}
+```
 
 <br/>
 
@@ -84,6 +87,13 @@ http://127.0.0.1:5000/api/calculator
     "timeToMaturity": 1,
     "riskFreeRate": 0.01,
     "volatility": 0.23
+}
+```
+*Response Body*
+```json
+{
+  "contract_price": 1.724200273478111,
+  "contract_type": "put"
 }
 ```
 
