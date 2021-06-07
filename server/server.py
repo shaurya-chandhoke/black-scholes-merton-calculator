@@ -4,12 +4,15 @@ from time import time
 import flask
 from flask import g, jsonify
 from flask_expects_json import expects_json
+from flask_cors import CORS
 
 from calculator import BlackScholesMertonCalculator
 
 # Global Variables
 app = flask.Flask(__name__, template_folder='./templates')
 app.config['Debug'] = True
+CORS(app)
+
 start_time = time()
 bsmCalculator = BlackScholesMertonCalculator()
 
@@ -28,7 +31,7 @@ def get_health():
     return jsonify(response)
 
 
-@app.route('/api/calculator', methods=['GET'])
+@app.route('/api/calculator', methods=['POST'])
 @expects_json(schema)
 def process_calculator():
     query_data = g.data

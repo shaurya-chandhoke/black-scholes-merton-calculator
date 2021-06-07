@@ -1,7 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CalculatorComponent} from './calculator.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NbButtonGroupModule, NbButtonModule, NbInputModule, NbRadioModule} from "@nebular/theme";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -10,7 +12,13 @@ import {ReactiveFormsModule} from "@angular/forms";
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    NbRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NbInputModule,
+    NbButtonGroupModule,
+    NbButtonModule,
+    HttpClientModule
   ]
 })
 export class CalculatorModule {

@@ -7,7 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NbLayoutModule, NbThemeModule} from '@nebular/theme';
 import {NbEvaIconsModule} from '@nebular/eva-icons';
 import {MastheadModule} from "./masthead/masthead.module";
-import {ReactiveFormsModule} from "@angular/forms";
+import {CalculatorModule} from "./pages/calculator/calculator.module";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     NbLayoutModule,
     NbEvaIconsModule,
     MastheadModule,
-    ReactiveFormsModule
+    CalculatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
