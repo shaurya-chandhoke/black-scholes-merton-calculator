@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "52945151-ee80-41ad-92f9-f361405d570e",
+		"_postman_id": "dffd3d85-86a4-4e4d-ba3b-29c136e7ce17",
 		"name": "black-scholes-merton-calculator",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -28,12 +28,9 @@
 			"response": []
 		},
 		{
-			"name": "(CALL) Sample Black Scholes Merton Calculator API Call",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Sample Black Scholes Merton Calculator API Call (European Call)",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -63,12 +60,9 @@
 			"response": []
 		},
 		{
-			"name": "(PUIT) Sample Black Scholes Merton Calculator API Call",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Sample Black Scholes Merton Calculator API Call (European Put)",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
