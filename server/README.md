@@ -43,17 +43,27 @@ calls:
 <br/>
 
 <span style="color: green">GET</span> Health
-```
-http://127.0.0.1:5000/health
-```
 
+Returns the server status
+```
+/health
+```
+*Sample Response Body*
+```json
+{
+    "status": "up",
+    "uptime": 5062.817890882492
+}
+```
 <br/>
 
 <span style="color: orange">POST</span> Sample Black Scholes Merton Calculator API Call (European Call)
+
+Given the differential equation components, this will return the price of the call option
 ```
-http://127.0.0.1:5000/api/calculator
+/api/calculator
 ```
-*Request Body*
+*Sample Request Body*
 ```json
 {
     "optionType": "call",
@@ -64,7 +74,7 @@ http://127.0.0.1:5000/api/calculator
     "volatility": 0.23
 }
 ```
-*Response Body*
+*Sample Response Body*
 ```json
 {
   "contract_price": 1.923203598494748,
@@ -75,10 +85,12 @@ http://127.0.0.1:5000/api/calculator
 <br/>
 
 <span style="color: orange">POST</span> Sample Black Scholes Merton Calculator API Call (European Put)
+
+Given the differential equation components, this will return the price of the call option
 ```
-http://127.0.0.1:5000/api/calculator
+/api/calculator
 ```
-*Request Body*
+*Sample Request Body*
 ```json
 {
     "optionType": "put",
@@ -89,7 +101,7 @@ http://127.0.0.1:5000/api/calculator
     "volatility": 0.23
 }
 ```
-*Response Body*
+*Sample Response Body*
 ```json
 {
   "contract_price": 1.724200273478111,
