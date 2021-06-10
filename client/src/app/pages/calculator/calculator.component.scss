@@ -1,0 +1,109 @@
+.main-parent {
+  order: 1;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.main-container {
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: 'Mukta', sans-serif !important;
+  padding: 1em;
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+  border-radius: 10px;
+}
+
+.main-content {
+}
+
+.child-1 {
+  order: 1;
+  width: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  color: black;
+  border-right: 1px solid lightslategrey;
+}
+
+.child-1-content {
+}
+
+.child-1-1 {
+  order: 1;
+  font-size: 20px;
+  text-align: center;
+}
+
+.child-1-2 {
+  order: 2;
+}
+
+.radio-group {
+  padding-top: 2px;
+}
+
+.radio-button {
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 3px;
+}
+
+.child-2 {
+  order: 2;
+  width: 50%;
+  color: black;
+}
+
+.child-2-content {
+}
+
+.child-2-1 {
+  order: 1;
+  font-size: 20px;
+  text-align: center;
+}
+
+.child-2-2 {
+  order: 2;
+  font-size: 20px;
+  text-align: end;
+}
+
+
+:host ::ng-deep mat-form-field {
+  font-family: 'Mukta', sans-serif !important;
+  font-size: medium;
+}
+
+:host ::ng-deep .mat-input-element {
+  color: black !important;
+}
+
+:host ::ng-deep .mat-form-field-prefix {
+  color: black !important;
+}
+
+:host ::ng-deep .mat-form-field-suffix {
+  color: black !important;
+}
+
+button {
+  font-family: 'Mukta', sans-serif;
+  transition: 0.25s;
+  z-index: 1;
+}
+
+button:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em black;
+  transform: translateY(-0.25em);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -8,27 +8,23 @@ import {CalculatorService} from "./calculator.service";
   styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent implements OnInit {
-  optionType = [
-    {value: 'call', label: 'Call'},
-    {value: 'put', label: 'Put'},
-  ];
-
   optionChoice = [];
   requestBody: any;
   responseData: any;
 
   bsmForm = new FormGroup({
-    stockPrice: new FormControl(''),
-    strikePrice: new FormControl(''),
-    timeToMaturity: new FormControl(''),
-    riskFreeRate: new FormControl(''),
-    volatility: new FormControl('')
+    stockPrice: new FormControl(),
+    strikePrice: new FormControl(),
+    timeToMaturity: new FormControl(),
+    riskFreeRate: new FormControl(),
+    volatility: new FormControl()
   })
 
   constructor(private calculatorService: CalculatorService) {
   }
 
   submitForm() {
+    console.log('Submitting');
     this.requestBody = this.bsmForm.value;
     this.calculatorService.requestData.next(this.requestBody);
 

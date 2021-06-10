@@ -2,8 +2,11 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CalculatorComponent} from './calculator.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {NbButtonGroupModule, NbButtonModule, NbInputModule, NbRadioModule} from "@nebular/theme";
 import {HttpClientModule} from "@angular/common/http";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatRadioModule} from "@angular/material/radio";
 
 
 @NgModule({
@@ -12,14 +15,13 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     CommonModule,
-    NbRadioModule,
-    FormsModule,
     ReactiveFormsModule,
-    NbInputModule,
-    NbButtonGroupModule,
-    NbButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatRadioModule,
+    FormsModule
   ]
 })
-export class CalculatorModule {
-}
+export class CalculatorModule { }

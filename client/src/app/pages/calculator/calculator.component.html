@@ -1,33 +1,57 @@
-<div class="calculator-container">
-  <h4>Calculator Components</h4>
-  <div class="calculator-components">
-    <div class="calculator-child child-1">
-      <nb-radio-group [(ngModel)]="optionChoice">
-        <nb-radio *ngFor="let option of optionType" [value]="option.value">
-          {{ option.label }}
-        </nb-radio>
-      </nb-radio-group>
+<div class="main-parent">
+  <div class="main-container">
+    <div class="main-content child-1">
+      <div class="child-1-content child-1-1">Contract Components</div>
+      <div class="child-1-content child-1-2">
+        <div class="radio-group">
+          <mat-radio-group aria-label="Select an option type" [(ngModel)]="optionChoice">
+            <mat-radio-button class="radio-button" value="call">Call</mat-radio-button>
+            <mat-radio-button value="put">Put</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <form [formGroup]="bsmForm" (ngSubmit)="submitForm()">
+          <p>
+            <mat-form-field appearance="standard" floatLabel="auto">
+              <mat-label>Enter the Stock Price</mat-label>
+              <input matInput type="number" placeholder="100.00" formControlName="stockPrice">
+              <span matPrefix>$&nbsp;</span>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="standard" floatLabel="auto">
+              <mat-label>Enter the Strike Price</mat-label>
+              <input matInput type="number" placeholder="100.00" formControlName="strikePrice">
+              <span matPrefix>$&nbsp;</span>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Enter the Time to Maturity</mat-label>
+              <input matInput type="number" placeholder="1" formControlName="timeToMaturity">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Enter the Risk-Free Rate</mat-label>
+              <input matInput type="number" placeholder="0.01" formControlName="riskFreeRate">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Enter the Implied Volatility</mat-label>
+              <input matInput type="number" placeholder="0.20" formControlName="volatility">
+            </mat-form-field>
+          </p>
+          <p>
+            <button mat-flat-button color="warn">Calculate Price</button>
+          </p>
+        </form>
+      </div>
     </div>
-    <div class="calculator-child child-2">
-      <form [formGroup]="bsmForm" (ngSubmit)="submitForm()">
-        <p><input nbInput type="text" placeholder="Stock Price" shape="semi-round" formControlName="stockPrice"></p>
-        <p><input nbInput type="text" placeholder="Strike Price" shape="semi-round" formControlName="strikePrice"></p>
-        <p><input nbInput type="text" placeholder="Time To Maturity" shape="semi-round"
-                  formControlName="timeToMaturity">
-        </p>
-        <p><input nbInput type="text" placeholder="Risk-Free Rate" shape="semi-round" formControlName="riskFreeRate">
-        </p>
-        <p><input nbInput type="text" placeholder="Volatility" shape="semi-round" formControlName="volatility"></p>
-        <button nbButton status="primary" shape="semi-round">Submit</button>
-      </form>
+
+    <div class="main-content child-2">
+      <div class="child-2-content child-2-1">Results</div>
+      <div class="child-2-content child-2-2">${{this.parseResponse()}}</div>
     </div>
-  </div>
-</div>
-<div class="answer-container">
-  <h4>Answer Here</h4>
-  <div class="answer-child child-1">
-    <p>
-      Option Price: <b>${{ parseResponse() }}</b>
-    </p>
   </div>
 </div>

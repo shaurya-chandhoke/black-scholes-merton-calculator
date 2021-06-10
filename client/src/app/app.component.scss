@@ -1,4 +1,212 @@
-app-masthead {
+.root-container {
+  font-family: 'Mukta', sans-serif;
+  position: relative;
+  color: white;
+  background: linear-gradient(220deg, #543ab7, #00acc1);
+  background-size: 400% 400%;
+  -webkit-animation: header-background 30s cubic-bezier(0.1, 0.2, 0.1, 0.4) infinite;
+  -moz-animation: header-background 30s cubic-bezier(0.1, 0.2, 0.1, 0.4) infinite;
+  -o-animation: header-background 30s cubic-bezier(0.1, 0.2, 0.1, 0.4) infinite;
+  animation: header-background 30s cubic-bezier(0.1, 0.2, 0.1, 0.4) infinite;
+}
+
+@-webkit-keyframes header-background {
+  0% {
+    background-position: 0 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
+}
+
+@-moz-keyframes header-background {
+  0% {
+    background-position: 0 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
+}
+
+@-o-keyframes header-background {
+  0% {
+    background-position: 0 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
+}
+
+@keyframes header-background {
+  0% {
+    background-position: 0 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
+}
+
+.root-body {
+  height: 65vh;
   width: 100%;
-  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+.name-reveal {
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+@-o-keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+@-ms-keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .content {
+    height: 30vh;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+.root-body::-webkit-scrollbar {
+  width: 10px;
+}
+
+.root-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.root-body::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
 }
