@@ -1,0 +1,50 @@
+.footer-container {
+  display: flex;
+  padding-top: 5px;
+  flex-flow: column nowrap;
+  background-color: lightgray;
+}
+
+.footer-directory-container {
+  order: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-directory-child {
+  padding: 0.1em;
+  margin-left: 1%;
+}
+
+.footer-directory-child a {
+  text-decoration: none;
+}
+
+.footer-directory-child a:hover {
+  text-decoration: underline;
+}
+
+.child-1 {
+  order: 1;
+}
+
+.child-2 {
+  order: 2;
+}
+
+.child-3 {
+  order: 3;
+}
+
+.child-4 {
+  order: 4;
+}
+
+.footer-message {
+  margin-top: 5px;
+  order: 2;
+  text-align: center;
+  font-size: medium;
+}
