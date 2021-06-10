@@ -36,8 +36,7 @@ python server.py
 
 ## Other Usages
 
-Although this server is intended to be used with the web application, there's no reason why you can't make use of the
-API available to make calls to the calculator exclusively. The following is the API and schema used to validate the API
+Although this server is intended to be used with the web application, it's also capable of being used exclusively. This may be useful if you would like to leverage your own website using this server. The following is the API and schema used to validate the API
 calls:
 
 <br/>
