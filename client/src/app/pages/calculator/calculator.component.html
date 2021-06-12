@@ -3,57 +3,78 @@
     <div class="main-content child-1">
       <div class="child-1-content child-1-1">Contract Components</div>
       <div class="child-1-content child-1-2">
-        <div class="radio-group">
-        </div>
         <form [formGroup]="bsmForm" (ngSubmit)="submitForm()">
-          <p>
-            <mat-radio-group required aria-label="Select an option type" formControlName="optionType">
-              <mat-radio-button class="radio-button" value="call">Call</mat-radio-button>
-              <mat-radio-button value="put">Put</mat-radio-button>
-            </mat-radio-group>
-          </p>
-          <p>
-            <mat-form-field appearance="standard" floatLabel="auto">
-              <mat-label>Enter the Stock Price</mat-label>
-              <input required matInput type="number" placeholder="100.00" formControlName="stockPrice">
-              <span matPrefix>$&nbsp;</span>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="standard" floatLabel="auto">
-              <mat-label>Enter the Strike Price</mat-label>
-              <input required matInput type="number" placeholder="100.00" formControlName="strikePrice">
-              <span matPrefix>$&nbsp;</span>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>Enter the Time to Maturity</mat-label>
-              <input required matInput type="number" placeholder="1" formControlName="timeToMaturity">
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>Enter the Risk-Free Rate</mat-label>
-              <input required matInput type="number" placeholder="0.01" formControlName="riskFreeRate">
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>Enter the Implied Volatility</mat-label>
-              <input required matInput type="number" placeholder="0.20" formControlName="volatility">
-            </mat-form-field>
-          </p>
-          <p>
-            <button mat-flat-button color="warn">Calculate Price</button>
-          </p>
+          <mat-grid-list cols="2" rowHeight="3:1">
+            <mat-grid-tile colspan="2">
+              <div class="grid-row-1">
+                <mat-radio-group required aria-label="Select an option type" formControlName="optionType">
+                  <mat-radio-button class="radio-button" value="call">Call</mat-radio-button>
+                  <mat-radio-button value="put">Put</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field appearance="standard" floatLabel="auto">
+                  <mat-label>Stock Price</mat-label>
+                  <input required matInput type="number" placeholder="100.00" formControlName="stockPrice">
+                  <span matPrefix>$&nbsp;</span>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field appearance="standard" floatLabel="auto">
+                  <mat-label>Strike Price</mat-label>
+                  <input required matInput type="number" placeholder="100.00" formControlName="strikePrice">
+                  <span matPrefix>$&nbsp;</span>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field appearance="standard">
+                  <mat-label>Time to Maturity</mat-label>
+                  <input required matInput type="number" placeholder="1" formControlName="timeToMaturity">
+                  <span matSuffix>yrs</span>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field appearance="standard">
+                  <mat-label>Risk-Free Rate</mat-label>
+                  <input required matInput type="number" placeholder="1" formControlName="riskFreeRate">
+                  <span matSuffix>%</span>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field appearance="standard">
+                  <mat-label>Implied Volatility</mat-label>
+                  <input required matInput type="number" placeholder="20" formControlName="volatility">
+                  <span matSuffix>%</span>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <button mat-flat-button color="warn">Calculate Price</button>
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
         </form>
       </div>
     </div>
 
     <div class="main-content child-2">
       <div class="child-2-content child-2-1">Results</div>
-      <div class="child-2-content child-2-2">${{this.parseResponse()}}</div>
+      <mat-grid-list cols="2" rowHeight="1:1">
+        <mat-grid-tile colspan="2">
+          <div class="child-2-content child-2-2">${{this.parseResponse()}}</div>
+        </mat-grid-tile>
+      </mat-grid-list>
     </div>
   </div>
 </div>

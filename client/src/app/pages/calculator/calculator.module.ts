@@ -8,6 +8,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatRadioModule,
     FormsModule,
     MatDialogModule,
+    MatGridListModule,
   ]
 })
 export class CalculatorModule {

@@ -71,9 +71,9 @@ export class CalculatorComponent implements OnInit {
 @Component({
   selector: 'error-modal',
   template: `
-    <div style="text-align: center">
+    <div>
       <h1 mat-dialog-title>Error</h1>
-      <div mat-dialog-content>Please select the type of option contract</div>
+      <div mat-dialog-content>Please ensure all fields have been entered.</div>
       <div mat-dialog-actions style="display: flex; justify-content: center">
         <button mat-button mat-dialog-close>Okay</button>
       </div>
