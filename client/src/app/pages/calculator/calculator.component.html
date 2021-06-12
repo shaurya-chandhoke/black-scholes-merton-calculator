@@ -4,42 +4,44 @@
       <div class="child-1-content child-1-1">Contract Components</div>
       <div class="child-1-content child-1-2">
         <div class="radio-group">
-          <mat-radio-group aria-label="Select an option type" [(ngModel)]="optionChoice">
-            <mat-radio-button class="radio-button" value="call">Call</mat-radio-button>
-            <mat-radio-button value="put">Put</mat-radio-button>
-          </mat-radio-group>
         </div>
         <form [formGroup]="bsmForm" (ngSubmit)="submitForm()">
           <p>
+            <mat-radio-group required aria-label="Select an option type" formControlName="optionType">
+              <mat-radio-button class="radio-button" value="call">Call</mat-radio-button>
+              <mat-radio-button value="put">Put</mat-radio-button>
+            </mat-radio-group>
+          </p>
+          <p>
             <mat-form-field appearance="standard" floatLabel="auto">
               <mat-label>Enter the Stock Price</mat-label>
-              <input matInput type="number" placeholder="100.00" formControlName="stockPrice">
+              <input required matInput type="number" placeholder="100.00" formControlName="stockPrice">
               <span matPrefix>$&nbsp;</span>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field appearance="standard" floatLabel="auto">
               <mat-label>Enter the Strike Price</mat-label>
-              <input matInput type="number" placeholder="100.00" formControlName="strikePrice">
+              <input required matInput type="number" placeholder="100.00" formControlName="strikePrice">
               <span matPrefix>$&nbsp;</span>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field appearance="standard">
               <mat-label>Enter the Time to Maturity</mat-label>
-              <input matInput type="number" placeholder="1" formControlName="timeToMaturity">
+              <input required matInput type="number" placeholder="1" formControlName="timeToMaturity">
             </mat-form-field>
           </p>
           <p>
             <mat-form-field appearance="standard">
               <mat-label>Enter the Risk-Free Rate</mat-label>
-              <input matInput type="number" placeholder="0.01" formControlName="riskFreeRate">
+              <input required matInput type="number" placeholder="0.01" formControlName="riskFreeRate">
             </mat-form-field>
           </p>
           <p>
             <mat-form-field appearance="standard">
               <mat-label>Enter the Implied Volatility</mat-label>
-              <input matInput type="number" placeholder="0.20" formControlName="volatility">
+              <input required matInput type="number" placeholder="0.20" formControlName="volatility">
             </mat-form-field>
           </p>
           <p>

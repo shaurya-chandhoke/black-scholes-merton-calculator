@@ -7,14 +7,13 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class CalculatorService {
-  requestData = new BehaviorSubject({});
   responseData = new BehaviorSubject({});
+  private static url = environment.serverURL + '/api/calculator';
 
-  url = environment.serverURL + '/api/calculator';
   constructor(private http: HttpClient) { }
 
   submitData(requestBody: any) {
-    this.http.post(this.url, requestBody).subscribe((response) => {
+    this.http.post(CalculatorService.url, requestBody).subscribe((response) => {
       this.responseData.next(response);
     })
   }
