@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {CalculatorService} from "./calculator.service";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-calculator',
@@ -8,11 +9,10 @@ import {CalculatorService} from "./calculator.service";
   styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent implements OnInit {
-  optionChoice = [];
-  requestBody: any;
   responseData: any;
 
   bsmForm = new FormGroup({
+    optionType: new FormControl(),
     stockPrice: new FormControl(),
     strikePrice: new FormControl(),
     timeToMaturity: new FormControl(),
@@ -20,40 +20,65 @@ export class CalculatorComponent implements OnInit {
     volatility: new FormControl()
   })
 
-  constructor(private calculatorService: CalculatorService) {
+
+  constructor(private calculatorService: CalculatorService, public dialog: MatDialog) {
+  }
+
+  determineError() {
+    if (!this.bsmForm.value['optionType'] || this.bsmForm.invalid) {
+      this.dialog.open(ErrorModalComponent);
+    }
   }
 
   submitForm() {
-    console.log('Submitting');
-    this.requestBody = this.bsmForm.value;
-    this.calculatorService.requestData.next(this.requestBody);
+    console.log(this.bsmForm.valid);
+    if (this.bsmForm.valid) {
+      // Create copy of current submission data to avoid resetting form
+      let cachedFormData = Object.assign({}, this.bsmForm.value);
 
-    Object.keys(this.requestBody).forEach(key => {
-      this.requestBody[key] = Number(this.requestBody[key]);
-    })
+      // Minor data cleanup
+      this.bsmForm.value['riskFreeRate'] /= 100;
+      this.bsmForm.value['volatility'] /= 100;
 
-    this.requestBody['optionType'] = this.optionChoice;
-    this.calculatorService.submitData(this.requestBody);
+      this.calculatorService.submitData(this.bsmForm.value);
+
+      // Reapply original copy
+      this.bsmForm.reset(cachedFormData)
+      this.bsmForm.markAsUntouched();
+      this.bsmForm.markAsPristine();
+    } else {
+      this.determineError();
+    }
   }
 
   parseResponse() {
     return this.responseData['contract_price'];
   }
 
-  ngOnInit(): void {
-    this.requestBody = this.calculatorService.requestData.getValue();
-    Object.keys(this.requestBody).forEach(key => {
-      if (key !== 'optionType') {
-        this.bsmForm.get(key)?.setValue(this.requestBody[key]);
-      }
-    })
-
-    this.optionChoice = this.requestBody['optionType'] || [];
-
+  watchResults() {
     this.calculatorService.observeResponse().subscribe((data: any) => {
       this.responseData = data;
     }, (error => {
       console.error("Something went wrong", error);
-    }))
+    }));
   }
+
+  ngOnInit(): void {
+    this.watchResults();
+  }
+}
+
+@Component({
+  selector: 'error-modal',
+  template: `
+    <div>
+      <h1 mat-dialog-title>Error</h1>
+      <div mat-dialog-content>Please ensure all fields have been entered.</div>
+      <div mat-dialog-actions style="display: flex; justify-content: center">
+        <button mat-button mat-dialog-close>Okay</button>
+      </div>
+    </div>
+  `
+})
+export class ErrorModalComponent {
 }
