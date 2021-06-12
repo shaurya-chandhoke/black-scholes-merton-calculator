@@ -25,7 +25,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   determineError() {
-    if (!this.bsmForm.value['optionType']) {
+    if (!this.bsmForm.value['optionType'] || this.bsmForm.invalid) {
       this.dialog.open(ErrorModalComponent);
     }
   }
