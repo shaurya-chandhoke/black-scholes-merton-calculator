@@ -15,7 +15,72 @@
   background-color: rgb(255, 255, 255);
   width: 75%;
   border-radius: 10px;
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
 }
+
+@keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+@-o-keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
+@-ms-keyframes fadeIn {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1
+  }
+}
+
 
 .main-content {
 }
