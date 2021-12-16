@@ -5,17 +5,21 @@ import {CalculatorComponent} from "./pages/calculator/calculator.component";
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
     path: "calculator",
     component: CalculatorComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
   }
 ];
 
