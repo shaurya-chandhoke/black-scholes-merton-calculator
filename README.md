@@ -7,6 +7,8 @@ This application is still in continuous development as it's intended to display 
 
 This application will be a component of a larger set of financial engineering and machine learning tools I'm in the works of developing.
 
+### [Click here to see the deployed application!](https://schan-2040.github.io/black-scholes-merton-calculator/home) (The backend is still a work in progress)
+
 ### Screenshots
 **Homepage**
 ![image](https://user-images.githubusercontent.com/38062430/121475280-331f5900-c993-11eb-9c11-ff1633d3e96d.png)
