@@ -1,6 +1,14 @@
-FROM node:16.13.0-stretch
+FROM node:14.15.0
+
 WORKDIR /code
-COPY . .
+
+ENV PATH /code/node_modules/.bin:$PATH
+
+COPY package.json /code/package.json
 RUN npm install
-EXPOSE 4200
-CMD npm run start
+RUN npm install -g @angular/cli@10.2.0
+
+COPY . /code
+
+CMD npm run serve
+

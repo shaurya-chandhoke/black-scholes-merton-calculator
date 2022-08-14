@@ -2,21 +2,18 @@ version: "3"
 
 services:
   frontend:
-    image: app/frontend
+    image: shauryachandhoke/black-scholes-merton-calculator-frontend:v1
     working_dir: /code
-    build:
-      context: ./client
-      dockerfile: ./Dockerfile
     ports:
       - "4200:4200"
     depends_on:
       - backend
+    volumes:
+      - ${PWD}/client/:/code
+      - /code/node_modules
 
   backend:
-    image: app/backend
+    image: shauryachandhoke/black-scholes-merton-calculator-backend:v1
     working_dir: /code
-    build:
-      context: ./server
-      dockerfile: ./Dockerfile
     ports:
       - "8080:8080"
