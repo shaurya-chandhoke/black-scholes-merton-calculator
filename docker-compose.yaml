@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  frontend:
+    image: app/frontend
+    working_dir: /code
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+
+  backend:
+    image: app/backend
+    working_dir: /code
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
