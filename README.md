@@ -22,7 +22,7 @@ You should see it pull two Docker images for the frontend and backend of the app
 
 Congratulations! You can now go to http://localhost:4200 to interact with the web application, or go to http://localhost:8080 to interact with the server and the API.
 
-### Want to pull the Docker images for the frontend and backend separately?**
+### Want to pull the Docker images for the frontend and backend separately?
 
 **Frontend**
 ```sh
