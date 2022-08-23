@@ -26,12 +26,12 @@ Congratulations! You can now go to http://localhost:4200 to interact with the we
 
 **Frontend**
 ```sh
-docker pull shauryachandhoke/black-scholes-merton-calculator-frontend
+docker pull shauryachandhoke/black-scholes-merton-calculator-frontend:v1
 ```
 
 **Backend**
 ```sh
-docker pull shauryachandhoke/black-scholes-merton-calculator-backend
+docker pull shauryachandhoke/black-scholes-merton-calculator-backend:v1
 ```
 
 ### Want To Customize The Image?
