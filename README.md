@@ -12,7 +12,7 @@ This application will be a component of a larger set of financial engineering an
 ## Use Docker (Easy)
 Don't want to install everything? No worries, I've created a `docker-compose.yaml` which will build a multi-container web application for you using the Docker images of the `/client` and `/server` source code I've published to Docker Hub already.
 
-To quickly get started, please ensure you have Docker installed on your machine and download the `docker-compose.yaml` file. Once downloaded, simply run in your terminal:
+To quickly get started, please ensure you have Docker installed on your machine and clone this repo containing the `docker-compose.yaml` file. Once cloned, simply run in your terminal:
 
 ```sh
 docker-compose up
