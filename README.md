@@ -76,11 +76,5 @@ Then when running `docker-compose up`, Docker will create images for the fronten
 
 ## Screenshots
 **Homepage**
-![image](https://user-images.githubusercontent.com/38062430/121475280-331f5900-c993-11eb-9c11-ff1633d3e96d.png)
 
-**Calculator**
-![image](https://user-images.githubusercontent.com/38062430/123017157-09eec780-d39a-11eb-96b1-c4c9c58b1a2c.png)
-
-
-
-
+![gif](https://user-images.githubusercontent.com/38062430/187125022-dc47ca56-c431-4ee5-acbe-ac53ee95f95a.gif)
