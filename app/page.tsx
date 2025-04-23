@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedBackground from './components/AnimatedBackground';
+import { calculateOptionPrice } from './utils/calculations';
 
 export default function Home() {
   const [showCalculator, setShowCalculator] = useState(false);
@@ -31,18 +32,22 @@ export default function Home() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/calculate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      setResult(data);
+      // Convert string inputs to numbers and handle percentage values
+      const S = parseFloat(formData.stockPrice);
+      const K = parseFloat(formData.strikePrice);
+      const T = parseFloat(formData.timeToExpiry);
+      const r = parseFloat(formData.riskFreeRate) / 100; // Convert percentage to decimal
+      const sigma = parseFloat(formData.volatility) / 100; // Convert percentage to decimal
+      const q = parseFloat(formData.dividendYield) / 100; // Convert percentage to decimal
+
+      // Calculate call and put prices
+      const callPrice = calculateOptionPrice(S, K, T, r, sigma, q, true);
+      const putPrice = calculateOptionPrice(S, K, T, r, sigma, q, false);
+
+      setResult({ callPrice, putPrice });
     } catch (error) {
       console.error('Error calculating options prices:', error);
     }
