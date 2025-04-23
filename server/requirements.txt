@@ -1,6 +1,0 @@
-flask
-numpy
-pandas
-scipy
-flask-expects-json
-flask-cors
