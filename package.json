@@ -1,5 +1,6 @@
 {
   "name": "black-scholes-merton-calculator",
+  "homepage": "https://shaurya-chandhoke.github.io/black-scholes-merton-calculator",
   "version": "0.1.0",
   "private": true,
   "scripts": {

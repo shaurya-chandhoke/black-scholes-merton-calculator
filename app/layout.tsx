@@ -13,6 +13,10 @@ const mukta = Mukta({
 export const metadata: Metadata = {
     title: 'Black Scholes Merton Calculator',
     description: 'A calculator for European options pricing using the Black Scholes Merton model',
+    metadataBase: new URL('https://shaurya-chandhoke.github.io'),
+    openGraph: {
+        images: '/black-scholes-merton-calculator/opengraph-image.png'
+    }
 };
 
 export default function RootLayout({
