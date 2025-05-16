@@ -2,7 +2,6 @@ import './globals.css';
 import type {Metadata} from 'next';
 import {Mukta} from 'next/font/google';
 import React from "react";
-import {GoogleAnalytics} from "@next/third-parties/google";
 
 const mukta = Mukta({
     weight: ['300', '400', '500', '600', '700'],
@@ -38,7 +37,6 @@ export default function RootLayout({
         </nav>
         {children}
         </body>
-        <GoogleAnalytics gaId="G-2YWNWH505M"/>
         </html>
     );
 } 
